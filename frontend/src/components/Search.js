@@ -4,11 +4,11 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 const Search = ({ word, setWord, handleSubmit }) => {
   return (
     <Container className="mt-4">
-      <Row>
-        <Col xs={12} md={8}>
+      <Row className="justify-content-center">
+        <Col xs={12} md={8} lg={6}>
           <Form onSubmit={handleSubmit}>
             <Row className="jusify-content-center">
-              <Col xs={9}>
+              <Col xs={9} md={9} lg={9}>
                 <Form.Control
                   type="text"
                   value={word}
@@ -17,7 +17,7 @@ const Search = ({ word, setWord, handleSubmit }) => {
                 />
               </Col>
               <Col>
-                <Button variant="primary" type="submit">
+                <Button variant="danger" type="submit">
                   Search
                 </Button>
               </Col>

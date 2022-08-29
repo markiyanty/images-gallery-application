@@ -6,5 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.welcome {
+ 
+  background-color: rgb(213, 213, 213)
+}
 
