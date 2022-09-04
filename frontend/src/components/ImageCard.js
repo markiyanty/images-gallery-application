@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, Navbar, Nav } from 'react-bootstrap';
+import { Card, Button, Nav } from 'react-bootstrap';
 
 const ImageCard = ({ image, deleteImage, saveImage }) => {
   const authorPortfolioURL = image.user?.portfolio_url;
