@@ -55,13 +55,14 @@ const App = () => {
 
   const handleSearchSubmit = async (e) => {
     e.preventDefault();
-    console.log(word);
+
     try {
       const res = await axios.get(`${API_URL}/new-image?query=${word}`);
       setImages([{ ...res.data, title: word }, ...images]);
       toast.info(`New image ${word.toUpperCase()} was found`);
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
     }
 
     setWord('');

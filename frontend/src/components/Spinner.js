@@ -3,8 +3,8 @@ import { Spinner as Loader } from 'react-bootstrap';
 
 const spinnerStyle = {
   position: 'absolute',
-  left: 'calc(50%-1rem)',
-  top: 'calc(50%-1rem)',
+  left: 'calc(50% - 1rem)',
+  top: 'calc(50% - 1rem)',
 };
 
 const Spinner = () => (
