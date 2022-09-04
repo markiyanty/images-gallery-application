@@ -4,9 +4,10 @@ import { Card, Button, Nav } from 'react-bootstrap';
 const ImageCard = ({ image, deleteImage, saveImage }) => {
   const authorPortfolioURL = image.user?.portfolio_url;
   const authorName = image.user?.name || 'No author name';
+
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={image.urls.small} />
+      <Card.Img variant="top" src={image.urls?.small} />
       <Card.Body>
         <Card.Title>{image.title?.toUpperCase()}</Card.Title>
         <Card.Text>{image.description || image.alt_description}</Card.Text>
@@ -35,4 +36,5 @@ const ImageCard = ({ image, deleteImage, saveImage }) => {
     </Card>
   );
 };
+
 export default ImageCard;

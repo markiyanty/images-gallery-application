@@ -58,8 +58,12 @@ const App = () => {
 
     try {
       const res = await axios.get(`${API_URL}/new-image?query=${word}`);
-      setImages([{ ...res.data, title: word }, ...images]);
-      toast.info(`New image ${word.toUpperCase()} was found`);
+      if (res.data.urls) {
+        setImages([{ ...res.data, title: word }, ...images]);
+        toast.info(`New image ${word.toUpperCase()} was found`);
+      } else {
+        toast.error('Error');
+      }
     } catch (error) {
       console.log(error);
       toast.error(error.message);
@@ -83,21 +87,20 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <Header title={'Images Gallery'} />
+    <div>
+      <Header title="Images Gallery" />
       {loading ? (
         <Spinner />
       ) : (
         <>
-          {' '}
           <Search
             word={word}
             setWord={setWord}
             handleSubmit={handleSearchSubmit}
           />
-          <Container className="mt-5">
+          <Container className="mt-4">
             {images.length ? (
-              <Row xs={1} md={2} lg={3} className="mt-4">
+              <Row xs={1} md={2} lg={3}>
                 {images.map((image, i) => (
                   <Col key={i} className="pb-3">
                     <ImageCard
